@@ -6,8 +6,8 @@ app = Flask(__name__, template_folder='template', static_folder='static')
 #create chatbot
 englishBot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 training_data = open('training/data.txt').read().splitlines()
-#trainer = ChatterBotCorpusTrainer(englishBot)
-#trainer.train("chatterbot.corpus.english") #train the chatter bot for english
+# trainer = ChatterBotCorpusTrainer(englishBot)
+# trainer.train("chatterbot.corpus.english") #train the chatter bot for english
 trainer = ListTrainer(englishBot)
 trainer.train(training_data)
 #define app routes
