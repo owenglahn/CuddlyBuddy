@@ -12,21 +12,37 @@ slothBot = ChatBot("Sammy", storage_adapter="chatterbot.storage.SQLStorageAdapte
 penguinBot = ChatBot("Penelope", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 pandaBot = ChatBot("Pax", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 
-training_data = open('training/data.txt').read().splitlines()
-dog_data = open("training/dog.txt").read().splitlines()
+bots = [catBot, bunnyBot, dogBot, slothBot, penguinBot, pandaBot]
+for c in bots :
+    trainer = ChatterBotCorpusTrainer(c)
+    trainer.train("chatterbot.corpus.english")
 
+
+training_data = open('training/data.txt').read().splitlines()
+
+cat_data = open("training/cat.txt").read().splitlines()
 catTrainer = ListTrainer(catBot)
-catTrainer.train(training_data)
+catTrainer.train(cat_data)
+
+bunny_data = open("training/bunny.txt").read().splitlines()
 bunnyTrainer = ListTrainer(bunnyBot)
-bunnyTrainer.train(training_data)
+bunnyTrainer.train(bunny_data)
+
+dog_data = open("training/dog.txt").read().splitlines()
 dogTrainer = ListTrainer(dogBot)
 dogTrainer.train(dog_data)
+
+sloth_data = open("training/sloth.txt").read().splitlines()
 slothTrainer = ListTrainer(slothBot)
-slothTrainer.train(training_data)
+slothTrainer.train(sloth_data)
+
+penguin_data = open("training/penguin.txt").read().splitlines()
 penguinTrainer = ListTrainer(penguinBot)
-penguinTrainer.train(training_data)
+penguinTrainer.train(penguin_data)
+
+panda_data = open("training/panda.txt").read().splitlines()
 pandaTrainer = ListTrainer(pandaBot)
-pandaTrainer.train(training_data)
+pandaTrainer.train(panda_data)
 
 cat_bool = False
 bunny_bool = False
@@ -91,4 +107,4 @@ def get_bot_response():
         bot = catBot # default, when i use None there is an error
     return str(bot.get_response(userText))
 if __name__ == "__main__":
-    app.run()
+    app.run(port=7000)

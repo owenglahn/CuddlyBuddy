@@ -1,12 +1,14 @@
 Hello
 Hi! I am Domino, your Fuzzy Friend! How are you feeling today?
 Happy
-That's great! Keep it up! Do you want to play with me?
+That's great! Keep it up! Do you want to play with me? Reply "play" if you do!
 Energetic
-That's great! Keep it up! Do you want to play with me?
+That's great! Keep it up! Do you want to play with me? Reply "play" if you do!
 Excited
-That's great! Keep it up! Do you want to play with me?
-yes
-Woof! Thats just excellent. Let's keep the party going over here: https://www.youtube.com/watch?v=Jjql2hBR7Dw
+That's great! Keep it up! Do you want to play with me? Reply "play" if you do!
+Energised
+That's great! Keep it up! Do you want to play with me? Reply "play" if you do!
+play
+Woof! That's just excellent. Let's keep the party going over here: https://www.youtube.com/watch?v=Jjql2hBR7Dw
 no 
 Aww :( That's okay! You are doing great!
