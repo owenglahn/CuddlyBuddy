@@ -1,1 +1,1 @@
-web: gunicorn app:fuzzy-friend
+web: python app.py
