@@ -6,4 +6,5 @@ Users must install the following Python Libraries: ChatterBot and Flask as follo
 > `$ pip install chatterbot`
 
 > `$ pip install flask`
+
 You can then clone the repository and run `app.py`, let the bots train and then click on the URL to visit the website.
