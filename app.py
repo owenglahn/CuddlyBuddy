@@ -13,13 +13,14 @@ penguinBot = ChatBot("Penelope", storage_adapter="chatterbot.storage.SQLStorageA
 pandaBot = ChatBot("Pax", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 
 training_data = open('training/data.txt').read().splitlines()
+dog_data = open("training/dog.txt").read().splitlines()
 
 catTrainer = ListTrainer(catBot)
 catTrainer.train(training_data)
 bunnyTrainer = ListTrainer(bunnyBot)
 bunnyTrainer.train(training_data)
 dogTrainer = ListTrainer(dogBot)
-dogTrainer.train(training_data)
+dogTrainer.train(dog_data)
 slothTrainer = ListTrainer(slothBot)
 slothTrainer.train(training_data)
 penguinTrainer = ListTrainer(penguinBot)
@@ -90,4 +91,4 @@ def get_bot_response():
         bot = catBot # default, when i use None there is an error
     return str(bot.get_response(userText))
 if __name__ == "__main__":
-    app.run(port=7000)
+    app.run()
