@@ -29,7 +29,7 @@ pandaTrainer.train(training_data)
 
 bot_dict = {"cat":catBot, "dog": dogBot, "panda": pandaBot, "penguin":penguinBot, \
     "bunny":bunnyBot, "sloth":slothBot}
-bot_name = ""
+bot_name = "cat" #default
 
 #define app routes
 @app.route("/")
