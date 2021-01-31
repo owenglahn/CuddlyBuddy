@@ -1,0 +1,28 @@
+#textInput {
+    border: none;
+    
+}
+.userText {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+}
+.userText span {
+    background-color: #9DDDC8;
+    padding: 10px;
+    border-radius: 2px;
+}
+.botText {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+}
+.botText span {
+    background-color: #E8D195;
+    padding: 10px;
+    border-radius: 2px;
+}
