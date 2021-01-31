@@ -36,32 +36,32 @@ bot_name = ""
 def index():
     return render_template("index.html")
 
-@app.route("/cat", methods=['POST'])
+@app.route("/cat")#, methods=['POST'])
 def cat():
     bot_name = "cat"
     return render_template("cat.html")
 
-@app.route("/dog", methods=['POST'])
+@app.route("/dog")#, methods=['POST'])
 def dog():
     bot_name = "dog"
     return render_template("dog.html")
 
-@app.route("/sloth", methods=['POST'])
+@app.route("/sloth")#, methods=['POST'])
 def sloth():
     bot_name = "sloth"
     return render_template("sloth.html")
 
-@app.route("/penguin", methods=['POST'])
+@app.route("/penguin")#, methods=['POST'])
 def penguin():
     bot_name = "penguin"
     return render_template("penguin.html")
 
-@app.route("/panda", methods = ['POST'])
+@app.route("/panda")#, methods = ['POST'])
 def panda():
     bot_name = 'panda'
     return render_template("panda.html")
 
-@app.route("/bunny", methods=['POST'])
+@app.route("/bunny")#, methods=['POST'])
 def bunny():
     bot_name = 'bunny'
     return render_template("bunny.html")
