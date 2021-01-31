@@ -44,46 +44,43 @@ panda_data = open("training/panda.txt").read().splitlines()
 pandaTrainer = ListTrainer(pandaBot)
 pandaTrainer.train(panda_data)
 
-cat_bool = False
-bunny_bool = False
-dog_bool = False
-sloth_bool = False
-penguin_bool = False
-panda_bool = False
+bot_dict = {"cat":catBot, "dog": dogBot, "panda": pandaBot, "penguin":penguinBot, \
+    "bunny":bunnyBot, "sloth":slothBot}
+bot_name = ""
 
 #define app routes
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/cat")
+@app.route("/cat", methods=['POST'])
 def cat():
-    cat_bool = True
+    bot_name = "cat"
     return render_template("cat.html")
 
-@app.route("/dog")
+@app.route("/dog", methods=['POST'])
 def dog():
-    dog_bool = True
+    bot_name = "dog"
     return render_template("dog.html")
 
-@app.route("/sloth")
+@app.route("/sloth", methods=['POST'])
 def sloth():
-    sloth_bool = True
+    bot_name = "sloth"
     return render_template("sloth.html")
 
-@app.route("/penguin")
+@app.route("/penguin", methods=['POST'])
 def penguin():
-    penguin_bool = True
+    bot_name = "penguin"
     return render_template("penguin.html")
 
-@app.route("/panda")
+@app.route("/panda", methods = ['POST'])
 def panda():
-    panda_bool = True
+    bot_name = 'panda'
     return render_template("panda.html")
 
-@app.route("/bunny")
+@app.route("/bunny", methods=['POST'])
 def bunny():
-    bunny_bool = True
+    bot_name = 'bunny'
     return render_template("bunny.html")
 
 
@@ -92,21 +89,17 @@ def bunny():
 #function for the bot response
 def get_bot_response():
     userText = request.args.get('msg')
-    if cat_bool:
-        bot = catBot
-    elif bunny_bool:
-        bot = bunnyBot
-    elif dog_bool:
-        bot = dogBot
-    elif sloth_bool:
-        bot = slothBot
-    elif penguin_bool:
-        bot = penguinBot
-    elif panda_bool:
-        bot = pandaBot
-    else:
-        bot = catBot # default, when i use None there is an error
+    bot = bot_dict.get(bot_name)
     return str(bot.get_response(userText))
+
+
+@app.route('/send_message', methods=['POST'])
+def send_message():
+    bot = bot_dict.get(bot_name)
+    input_json = request.get_json(force = True)
+    if input_json['type'] =='panda':
+        return str(bot.get_response(input_json['msg']))
+
 if __name__ == "__main__":
     app.debug = True
     app.run(port=7000)
