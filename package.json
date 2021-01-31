@@ -1,0 +1,19 @@
+{
+  "name": "fuzzyfriend",
+  "version": "1.0.0",
+  "description": "Website with friendly, animal chat bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owenglahn/FuzzyFriend.git"
+  },
+  "author": "Owen Glahn <owen.glahn@mail.mcgill.ca>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/owenglahn/FuzzyFriend/issues"
+  },
+  "homepage": "https://github.com/owenglahn/FuzzyFriend#readme"
+}
