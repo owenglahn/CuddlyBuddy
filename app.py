@@ -88,6 +88,7 @@ def bunny():
 
 
 @app.route("/get")
+
 #function for the bot response
 def get_bot_response():
     userText = request.args.get('msg')
@@ -107,4 +108,5 @@ def get_bot_response():
         bot = catBot # default, when i use None there is an error
     return str(bot.get_response(userText))
 if __name__ == "__main__":
+    app.debug = True
     app.run(port=7000)
