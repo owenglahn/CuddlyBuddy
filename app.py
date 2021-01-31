@@ -46,39 +46,39 @@ pandaTrainer.train(panda_data)
 
 bot_dict = {"cat":catBot, "dog": dogBot, "panda": pandaBot, "penguin":penguinBot, \
     "bunny":bunnyBot, "sloth":slothBot}
-bot_name = ""
+bot_name = "cat" #default
 
 #define app routes
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/cat", methods=['POST'])
+@app.route("/cat")#, methods=['POST'])
 def cat():
     bot_name = "cat"
     return render_template("cat.html")
 
-@app.route("/dog", methods=['POST'])
+@app.route("/dog")#, methods=['POST'])
 def dog():
     bot_name = "dog"
     return render_template("dog.html")
 
-@app.route("/sloth", methods=['POST'])
+@app.route("/sloth")#, methods=['POST'])
 def sloth():
     bot_name = "sloth"
     return render_template("sloth.html")
 
-@app.route("/penguin", methods=['POST'])
+@app.route("/penguin")#, methods=['POST'])
 def penguin():
     bot_name = "penguin"
     return render_template("penguin.html")
 
-@app.route("/panda", methods = ['POST'])
+@app.route("/panda")#, methods = ['POST'])
 def panda():
     bot_name = 'panda'
     return render_template("panda.html")
 
-@app.route("/bunny", methods=['POST'])
+@app.route("/bunny")#, methods=['POST'])
 def bunny():
     bot_name = 'bunny'
     return render_template("bunny.html")
@@ -93,13 +93,12 @@ def get_bot_response():
     return str(bot.get_response(userText))
 
 
-@app.route('/send_message', methods=['POST'])
-def send_message():
-    bot = bot_dict.get(bot_name)
-    input_json = request.get_json(force = True)
-    if input_json['type'] =='panda':
-        return str(bot.get_response(input_json['msg']))
+# @app.route('/send_message', methods=['POST'])
+# def send_message():
+#     input_json = request.get_json(force = True)
+#     if input_json['type'] =='panda':
+        
 
 if __name__ == "__main__":
-    app.debug = True
+    # app.debug = True
     app.run(port=7000)
