@@ -73,5 +73,14 @@ def get_bot_response():
     userText = request.args.get('msg')
     bot = bot_dict.get(bot_name)
     return str(bot.get_response(userText))
+
+
+@app.route('/send_message', methods=['POST'])
+def send_message():
+    bot = bot_dict.get(bot_name)
+    input_json = request.get_json(force = True)
+    if input_json['type'] =='panda':
+        return str(bot.get_response(input_json['msg']))
+
 if __name__ == "__main__":
     app.run(port=7000)
