@@ -4,25 +4,25 @@
 }
 .userText {
     color: white;
-    font-family: monospace;
+    font-family: Arial, sans-serif;
     font-size: 17px;
     text-align: right;
     line-height: 30px;
 }
 .userText span {
-    background-color: #009688;
+    background-color: #9DDDC8;
     padding: 10px;
     border-radius: 2px;
 }
 .botText {
     color: white;
-    font-family: monospace;
+    font-family: Arial, sans-serif;
     font-size: 17px;
     text-align: left;
     line-height: 30px;
 }
 .botText span {
-    background-color: #EF5350;
+    background-color: #F6F2E9;
     padding: 10px;
     border-radius: 2px;
 }
